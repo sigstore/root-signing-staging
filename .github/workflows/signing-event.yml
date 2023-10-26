@@ -1,0 +1,20 @@
+name: TUF-on-CI signing event
+
+permissions: {}
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['sign/**']
+    paths: ['metadata/**', 'targets/**']
+
+jobs:
+  handle-signing-event:
+    name: TUF-on-CI signing event
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # for adding targets changes into the signing event branch
+      issues: write
+    steps:
+      - name: Signing event
+        uses: theupdateframework/tuf-on-ci/actions/signing-event@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0

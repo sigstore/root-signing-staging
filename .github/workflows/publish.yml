@@ -1,0 +1,31 @@
+name: TUF-on-CI publish to GitHub Pages
+
+permissions: {}
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - id: build-and-upload-repository
+        uses: theupdateframework/tuf-on-ci/actions/upload-repository@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
+        with:
+          gh_pages: true
+
+  deploy:
+    permissions:
+      pages: write
+      id-token: write # for authenticating to GH Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy TUF-on-CI repository to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@9dbe3824824f8a1377b8e298bafde1a50ede43e5 # v2.0.4

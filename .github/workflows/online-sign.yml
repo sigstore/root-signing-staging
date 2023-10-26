@@ -1,0 +1,27 @@
+name: TUF-on-CI online signing
+
+permissions: {}
+
+on:
+  schedule:
+    - cron:  '17 1,7,13,19 * * *'
+  push:
+    branches: [ main ]
+    paths: ['metadata/**']
+  workflow_dispatch:
+
+jobs:
+  online-sign:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: 'write' # for OIDC identity access
+      contents: 'write' # for commiting snapshot/timestamp changes
+      actions: 'write' # for dispatching publish workflow
+
+    steps:
+      - id: online-sign
+        uses: theupdateframework/tuf-on-ci/actions/online-sign@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
+        with:
+          gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
