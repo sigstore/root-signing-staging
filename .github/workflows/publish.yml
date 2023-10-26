@@ -15,6 +15,7 @@ jobs:
         uses: theupdateframework/tuf-on-ci/actions/upload-repository@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
         with:
           gh_pages: true
+          metadata_path: './'
 
   deploy:
     permissions:
