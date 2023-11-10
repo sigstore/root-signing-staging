@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - id: online-sign
-        uses: theupdateframework/tuf-on-ci/actions/online-sign@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
+        uses: theupdateframework/tuf-on-ci/actions/online-sign@3491682aa226e159ddab4011df8009468cbf0dea # v0.2.0
         with:
           gcp_workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           gcp_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
