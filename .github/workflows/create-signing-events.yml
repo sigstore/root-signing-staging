@@ -1,0 +1,18 @@
+name: TUF-on-CI create Signing events
+
+on:
+  schedule:
+    - cron:  '17 1,7,13,19 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  create-signing-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'write' # for committing to signing event branch
+      actions: 'write' # for dispatching signing event workflow
+    steps:
+      - name: Create signing events for offline version bumps
+        uses: theupdateframework/tuf-on-ci/actions/create-signing-events@6d32b9491bcccdf75b64f4c779f0366ad0e35b7e # v0.1.0
