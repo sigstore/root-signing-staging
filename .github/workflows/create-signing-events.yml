@@ -15,4 +15,4 @@ jobs:
       actions: 'write' # for dispatching signing event workflow
     steps:
       - name: Create signing events for offline version bumps
-        uses: theupdateframework/tuf-on-ci/actions/create-signing-events@3491682aa226e159ddab4011df8009468cbf0dea # v0.2.0
+        uses: theupdateframework/tuf-on-ci/actions/create-signing-events@d5496b4dfa28a02eec0d8ac1bb228ea08d3f7c1a # v0.3.0
