@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: build-and-upload-repository
-        uses: theupdateframework/tuf-on-ci/actions/upload-repository@d5496b4dfa28a02eec0d8ac1bb228ea08d3f7c1a # v0.3.0
+        uses: theupdateframework/tuf-on-ci/actions/upload-repository@6e6d3fbf63d714721cd6a693b2b9f599ebd94f19 # rc-v0.4.0
         with:
           gh_pages: true
           ref: ${{ inputs.ref }}
@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Deploy TUF-on-CI repository to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@13b55b33dd8996121833dbc1db458c793a334630 # v3.0.1
+        uses: actions/deploy-pages@7a9bd943aa5e5175aeb8502edcc6c1c02d398e10 # v4.0.2
