@@ -3,12 +3,16 @@
   {
    "keyid": "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda",
    "sig": ""
+  },
+  {
+   "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-01-06T08:54:04Z",
+  "expires": "2034-01-06T09:00:14Z",
   "keys": {
    "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600": {
     "keyid_hash_algorithms": [
@@ -21,6 +25,14 @@
     },
     "scheme": "ecdsa-sha2-nistp256",
     "x-tuf-on-ci-online-uri": "file:nonexistentkey?encrypted=false"
+   },
+   "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEohqIdE+yTl4OxpX8ZxNUPrg3SL9H\nBDnhZuceKkxy2oMhUOxhWweZeG3bfM1T4ZLnJimC6CAYVU5+F5jZCoftRw==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256",
+    "x-tuf-on-ci-keyowner": "@jku"
    },
    "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda": {
     "keyid_hash_algorithms": [
@@ -38,7 +50,8 @@
   "roles": {
    "root": {
     "keyids": [
-     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda"
+     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda",
+     "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
     ],
     "threshold": 1
    },
