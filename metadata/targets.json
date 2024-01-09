@@ -1,35 +1,27 @@
 {
  "signatures": [
   {
-   "keyid": "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda",
-   "sig": ""
-  },
-  {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "3045022100b7411d6f2a0b773a3a07ac5b34983cdaf93867a737b93b21d1664cdc9254532102204e07a7d9b52b89d0620f5afa34a72c6c9c4749961cf455dfe477e2256363537a"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "targets",
   "delegations": {
    "keys": {
-    "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600": {
-     "keyid_hash_algorithms": [
-      "sha256",
-      "sha512"
-     ],
-     "keytype": "ecdsa-sha2-nistp256",
+    "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93": {
+     "keytype": "ecdsa",
      "keyval": {
-      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXMZ7rD8tWDE4lK/+naJN7INMxNC7\nbMMANDqTQE7WpzyzffWOg59hc/MwbvJtvuxhO9mEu3GD3Cn0HffFlmVRiA==\n-----END PUBLIC KEY-----\n"
+      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEohqIdE+yTl4OxpX8ZxNUPrg3SL9H\nBDnhZuceKkxy2oMhUOxhWweZeG3bfM1T4ZLnJimC6CAYVU5+F5jZCoftRw==\n-----END PUBLIC KEY-----\n"
      },
      "scheme": "ecdsa-sha2-nistp256",
-     "x-tuf-on-ci-keyowner": "@-nobody"
+     "x-tuf-on-ci-keyowner": "@jku"
     }
    },
    "roles": [
     {
      "keyids": [
-      "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600"
+      "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
      ],
      "name": "registry.npmjs.org",
      "paths": [
@@ -40,7 +32,7 @@
     }
    ]
   },
-  "expires": "2034-01-06T08:54:04Z",
+  "expires": "2034-01-06T09:02:56Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
