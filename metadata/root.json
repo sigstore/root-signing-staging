@@ -6,13 +6,13 @@
   },
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "30450221008d1cfa0e1f72c82bfb2dad6fb66a0848e6b4060bb512b4ac90489d5fe994543c022078ae03325ec748dd97aa3f3d457adad9bb0cc3730d366f3c0ccad203a9d8d89c"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-01-06T09:00:14Z",
+  "expires": "2034-01-06T09:02:06Z",
   "keys": {
    "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600": {
     "keyid_hash_algorithms": [
@@ -65,7 +65,7 @@
    },
    "targets": {
     "keyids": [
-     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda"
+     "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
     ],
     "threshold": 1
    },
