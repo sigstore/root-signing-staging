@@ -6,25 +6,21 @@
   },
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "3045022038ac8e4b00ae3a45f6e4fd76cd0ac564952454c4a1069e6adf17998bd387f91d022100e374b82375530566e56f8091dfe86251b2ac6c66d284c506da3390ff909de857"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-01-06T09:02:06Z",
+  "expires": "2034-01-19T13:29:13Z",
   "keys": {
-   "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600": {
-    "keyid_hash_algorithms": [
-     "sha256",
-     "sha512"
-    ],
-    "keytype": "ecdsa-sha2-nistp256",
+   "5416a7a35ef827abc651e200ac11f3d23e9db74ef890b1fedb69fb2a152ebac5": {
+    "keytype": "ecdsa",
     "keyval": {
-     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXMZ7rD8tWDE4lK/+naJN7INMxNC7\nbMMANDqTQE7WpzyzffWOg59hc/MwbvJtvuxhO9mEu3GD3Cn0HffFlmVRiA==\n-----END PUBLIC KEY-----\n"
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExxmEtmhF5U+i+v/6he4BcSLzCgMx\n/0qSrvDg6bUWwUrkSKS2vDpcJrhGy5fmmhRrGawjPp1ALpC3y1kqFTpXDg==\n-----END PUBLIC KEY-----\n"
     },
     "scheme": "ecdsa-sha2-nistp256",
-    "x-tuf-on-ci-online-uri": "file:nonexistentkey?encrypted=false"
+    "x-tuf-on-ci-online-uri": "gcpkms:projects/projectsigstore-staging/locations/global/keyRings/tuf-keyring/cryptoKeys/tuf-key/cryptoKeyVersions/2"
    },
    "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93": {
     "keytype": "ecdsa",
@@ -57,7 +53,7 @@
    },
    "snapshot": {
     "keyids": [
-     "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600"
+     "5416a7a35ef827abc651e200ac11f3d23e9db74ef890b1fedb69fb2a152ebac5"
     ],
     "threshold": 1,
     "x-tuf-on-ci-expiry-period": 3650,
@@ -71,11 +67,11 @@
    },
    "timestamp": {
     "keyids": [
-     "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600"
+     "5416a7a35ef827abc651e200ac11f3d23e9db74ef890b1fedb69fb2a152ebac5"
     ],
     "threshold": 1,
-    "x-tuf-on-ci-expiry-period": 3650,
-    "x-tuf-on-ci-signing-period": 365
+    "x-tuf-on-ci-expiry-period": 14,
+    "x-tuf-on-ci-signing-period": 7
    }
   },
   "spec_version": "1.0",
