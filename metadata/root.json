@@ -2,68 +2,64 @@
  "signatures": [
   {
    "keyid": "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda",
-   "sig": ""
-  },
-  {
-   "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "30440220027aa069ab37959f72b9e5f9c351b52954640f23c2bee6530d26466a37d9c9f302202641f983160558e0100c2014be57be9a7d1e495b2390488fc113c166d6afb251"
+   "sig": "3044022006fe8fff51d18753aeff141f81a962b8ac33f49831bbbec1334b2733ea96890002206e6f343c9c7b98a2ebd1f0b51aa5286ed3a4d48e271c77d88ea77499231bff5c"
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-01-15T11:59:33Z",
+  "expires": "2029-03-05T22:50:21Z",
   "keys": {
-   "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93": {
-    "keytype": "ecdsa",
+   "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600": {
+    "keyid_hash_algorithms": [
+     "sha256",
+     "sha512"
+    ],
+    "keytype": "ecdsa-sha2-nistp256",
     "keyval": {
-     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEohqIdE+yTl4OxpX8ZxNUPrg3SL9H\nBDnhZuceKkxy2oMhUOxhWweZeG3bfM1T4ZLnJimC6CAYVU5+F5jZCoftRw==\n-----END PUBLIC KEY-----\n"
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXMZ7rD8tWDE4lK/+naJN7INMxNC7\nbMMANDqTQE7WpzyzffWOg59hc/MwbvJtvuxhO9mEu3GD3Cn0HffFlmVRiA==\n-----END PUBLIC KEY-----\n"
     },
-    "scheme": "ecdsa-sha2-nistp256",
-    "x-tuf-on-ci-keyowner": "@jku"
+    "scheme": "ecdsa-sha2-nistp256"
    },
-   "96b8aa3aaf4e42c7963ae128e223769839159078eb93f6efc7660800ea164702": {
-    "keytype": "ecdsa",
+   "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda": {
+    "keyid_hash_algorithms": [
+     "sha256",
+     "sha512"
+    ],
+    "keytype": "ecdsa-sha2-nistp256",
     "keyval": {
-     "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEu9sGmXWQEcrdzMViKRrs/fCuiCWrEnC9\nyVxLY450i2jXJ67vREZswyMGS+FlLf4igkT9lmi2AqB9XOl0tyQh71IYlK2HhbDQ\neti5LbkanR3LKtY3kvMvJL1hSizaIJ3X\n-----END PUBLIC KEY-----\n"
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL3vL/VeaH6nBbo4rekyO4cc/QthS\n+nlyJXCXSnyIMAtLmVTa8Pf0qG6YIVaR0TmLkyk9YoSVsZakxuMTuaEwrg==\n-----END PUBLIC KEY-----\n"
     },
-    "scheme": "ecdsa-sha2-nistp384",
-    "x-tuf-on-ci-online-uri": "gcpkms:projects/projectsigstore-staging/locations/global/keyRings/tuf-keyring/cryptoKeys/tuf-key/cryptoKeyVersions/1"
+    "scheme": "ecdsa-sha2-nistp256"
    }
   },
   "roles": {
    "root": {
     "keyids": [
-     "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
+     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda"
     ],
     "threshold": 1
    },
    "snapshot": {
     "keyids": [
-     "96b8aa3aaf4e42c7963ae128e223769839159078eb93f6efc7660800ea164702"
+     "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600"
     ],
-    "threshold": 1,
-    "x-tuf-on-ci-expiry-period": 3650,
-    "x-tuf-on-ci-signing-period": 365
+    "threshold": 1
    },
    "targets": {
     "keyids": [
-     "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
+     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda"
     ],
     "threshold": 1
    },
    "timestamp": {
     "keyids": [
-     "96b8aa3aaf4e42c7963ae128e223769839159078eb93f6efc7660800ea164702"
+     "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600"
     ],
-    "threshold": 1,
-    "x-tuf-on-ci-expiry-period": 14,
-    "x-tuf-on-ci-signing-period": 7
+    "threshold": 1
    }
   },
   "spec_version": "1.0",
-  "version": 6,
-  "x-tuf-on-ci-expiry-period": 3650,
-  "x-tuf-on-ci-signing-period": 365
+  "version": 4
  }
 }
