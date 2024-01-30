@@ -15,9 +15,14 @@ jobs:
       - name: Smoke test TUF-on-CI repository with a TUF client
         uses: theupdateframework/tuf-on-ci/actions/test-repository@4ae5fdf2b18c6256787df167fce7a0e2d7e7a40e # v0.5.0
 
+  custom-smoke-test:
+    permissions:
+      id-token: 'write' # For signing with the GitHub workflow identity
+    uses: ./.github/workflows/custom-test.yml
+
   update-issue:
     runs-on: ubuntu-latest
-    needs: [smoke-test]
+    needs: [smoke-test, custom-smoke-test]
     # During workflow_call, caller updates issue
     if: always() && !cancelled() && github.workflow == 'test.yml'
     permissions:
