@@ -1,0 +1,30 @@
+name: TUF-on-CI repository tests
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4,10,16,22 * * *'
+
+permissions: {}
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Smoke test TUF-on-CI repository with a TUF client
+        uses: theupdateframework/tuf-on-ci/actions/test-repository@4ae5fdf2b18c6256787df167fce7a0e2d7e7a40e # v0.5.0
+
+  update-issue:
+    runs-on: ubuntu-latest
+    needs: [smoke-test]
+    # During workflow_call, caller updates issue
+    if: always() && !cancelled() && github.workflow == 'test.yml'
+    permissions:
+      issues: 'write' # for modifying Issues
+    steps:
+      - name: Update the issue for the workflow
+        uses: theupdateframework/tuf-on-ci/actions/update-issue@4ae5fdf2b18c6256787df167fce7a0e2d7e7a40e # v0.5.0
+        with:
+          token: ${{ secrets.TUF_ON_CI_TOKEN || secrets.GITHUB_TOKEN }}
+          success: ${{ !contains(needs.*.result, 'failure') }}
