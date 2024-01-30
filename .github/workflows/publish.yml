@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: build-and-upload-repository
-        uses: theupdateframework/tuf-on-ci/actions/upload-repository@ecbe81ad94615bfb2d133a022db383c80d782038 # v0.4.0
+        uses: theupdateframework/tuf-on-ci/actions/upload-repository@4ae5fdf2b18c6256787df167fce7a0e2d7e7a40e # v0.5.0
         with:
           gh_pages: true
           ref: ${{ inputs.ref }}
