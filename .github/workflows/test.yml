@@ -17,9 +17,14 @@ jobs:
         with:
           metadata_url: https://sigstore.github.io/root-signing-staging/
 
+  custom-smoke-test:
+    permissions:
+      id-token: 'write' # For signing with the GitHub workflow identity
+    uses: ./.github/workflows/custom-test.yml
+
   update-issue:
     runs-on: ubuntu-latest
-    needs: [smoke-test]
+    needs: [smoke-test, custom-smoke-test]
     # During workflow_call, caller updates issue
     if: always() && !cancelled() && github.workflow == 'TUF-on-CI repository tests'
     permissions:

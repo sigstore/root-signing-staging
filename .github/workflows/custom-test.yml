@@ -1,0 +1,37 @@
+name: root-signing repository tests with a Sigstore client
+
+on:
+  workflow_call:
+
+permissions: {}
+
+jobs:
+  custom-test:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: 'write' # For signing with the GitHub workflow identity
+    steps:
+      - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+        with:
+          python-version: '3.11'
+
+      - name: Install sigstore-python, tweak it to use the published TUF repository
+        run: |
+          pip install sigstore
+
+          # tweak sigstore sources to use our publish URL
+          SITE_PACKAGES=$(pip show sigstore | sed -n "s/^Location: //p")
+          TUF_PY="$SITE_PACKAGES/sigstore/_internal/tuf.py"
+          PUBLISH_URL="https://sigstore.github.io/root-signing-staging/"
+
+          sed -ie "s#^STAGING_TUF_URL = .*#STAGING_TUF_URL = \"$PUBLISH_URL\"#" "$TUF_PY"
+
+      - name: Test published repository with a Sigstore client
+        run: |
+          touch artifact
+          # sign, then verify using the Actions oidc identity
+          python -m sigstore -vv --staging sign artifact
+
+          python -m sigstore --staging verify github \
+              --cert-identity $GITHUB_SERVER_URL/$GITHUB_WORKFLOW_REF \
+              artifact
