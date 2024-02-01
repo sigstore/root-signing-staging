@@ -28,10 +28,8 @@ jobs:
 
       - name: Test published repository with a Sigstore client
         run: |
+          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
-          # sign, then verify using the Actions oidc identity
+          # sign, then verify using this workflows oidc identity
           python -m sigstore -vv --staging sign artifact
-
-          python -m sigstore --staging verify github \
-              --cert-identity $GITHUB_SERVER_URL/$GITHUB_WORKFLOW_REF \
-              artifact
+          python -m sigstore --staging verify github --cert-identity $IDENTITY artifact
