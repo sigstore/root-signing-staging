@@ -40,6 +40,7 @@ jobs:
     needs: deploy
     permissions:
       issues: 'write' # for modifying Issues
+      id-token: 'write' # for signing with the GitHub Actions workflow identity
     uses: ./.github/workflows/test.yml
 
   update-issue:
