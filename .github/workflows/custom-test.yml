@@ -6,7 +6,7 @@ on:
 permissions: {}
 
 jobs:
-  custom-test:
+  sigstore-python:
     runs-on: ubuntu-latest
     permissions:
       id-token: 'write' # For signing with the GitHub workflow identity
@@ -26,10 +26,43 @@ jobs:
 
           sed -ie "s#^STAGING_TUF_URL = .*#STAGING_TUF_URL = \"$PUBLISH_URL\"#" "$TUF_PY"
 
-      - name: Test published repository with a Sigstore client
+      - name: Test published repository with sigstore-python
         run: |
           IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
           # sign, then verify using this workflows oidc identity
           python -m sigstore -vv --staging sign artifact
           python -m sigstore --staging verify github --cert-identity $IDENTITY artifact
+
+  cosign:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: 'write' # For signing with the GitHub workflow identity
+    steps:
+      - uses: sigstore/cosign-installer@e1523de7571e31dbe865fd2e80c5c7c23ae71eb4 # v3.4.0
+
+      - name: Download initial root
+        run: curl -o root.json https://sigstore.github.io/root-signing-staging/1.root.json
+
+      - name: Test published repository with cosign
+        run: |
+          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
+          touch artifact
+
+          # initialize from the published repository
+          cosign initialize --root root.json --mirror https://sigstore.github.io/root-signing-staging/
+
+          # sign, then verify using this workflows oidc identity
+          cosign sign-blob \
+              --yes \
+              --fulcio-url https://fulcio.sigstage.dev \
+              --oidc-issuer https://oauth2.sigstage.dev/auth \
+              --rekor-url https://rekor.sigstage.dev \
+              --bundle bundle.json \
+              artifact
+
+          cosign verify-blob \
+              --certificate-identity $IDENTITY \
+              --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+              --bundle bundle.json \
+              artifact
