@@ -41,10 +41,13 @@ jobs:
 
       - name: Upload repository to GCS
         run: |
+          BUCKET="gs://tuf-root-staging/"
+          LOAD_BALANCER="tuf-repo-cdn-lb"
+
           # Upload metadata, make sure we upload timestamp last
-          mv repository/timestamp.json .
-          gcloud storage cp --cache-control=no-store -r repository/* gs://tuf-root-staging/
-          gcloud storage cp --cache-control=no-store timestamp.json gs://tuf-root-staging/
+          gcloud storage rsync --cache-control=no-store --recursive --exclude=timestamp.json \
+              repository/ $BUCKET
+          gcloud storage cp --cache-control=no-store repository/timestamp.json $BUCKET
 
           # invalidate CDN cache
-          gcloud compute url-maps invalidate-cdn-cache tuf-repo-cdn-lb --path "/*" --async
+          gcloud compute url-maps invalidate-cdn-cache $LOAD_BALANCER --path "/*" --async
