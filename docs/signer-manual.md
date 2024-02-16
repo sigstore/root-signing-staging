@@ -37,14 +37,10 @@ this is possible in _Applications -> PIV -> Configure certificates -> Digital si
 * Create `.tuf-on-ci-sign.ini` with this content:
   ```
   [settings]
-  pykcs11lib = <PATH-TO-PKCS11-MODULE>
   user-name = @<YOUR-GITHUB-USER-NAME>
   push-remote = origin
   pull-remote = upstream
   ```
-  Replace pykcs11lib value with the location of the PKCS11 module installed earlier: On linux it may be
-  `/usr/lib/x86_64-linux-gnu/libykcs11.so` or `/usr/local/lib/libykcs11.so`. On Mac maybe
-  `/opt/homebrew/lib/libykcs11.dylib` or `/usr/local/lib/libykcs11.dylib`.
 
 ## Signing
 
