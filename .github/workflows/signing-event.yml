@@ -13,12 +13,12 @@ jobs:
     name: TUF-on-CI signing event
     runs-on: ubuntu-latest
     permissions:
-      contents: write # for adding targets changes into the signing event branch
-      issues: write
+      contents: write # for making commits in signing event and for modifying draft state
+      pull-requests: write # for modifying signing event pull requests
       actions: write # for dispatching another signing-event workflow
 
     steps:
       - name: Signing event
-        uses: theupdateframework/tuf-on-ci/actions/signing-event@4ae5fdf2b18c6256787df167fce7a0e2d7e7a40e # v0.5.0
+        uses: theupdateframework/tuf-on-ci/actions/signing-event@38e31ce9aaf106ef0c7332390c5f9882f8cc9e82 # v0.6.0
         with:
           token: ${{ secrets.TUF_ON_CI_TOKEN || secrets.GITHUB_TOKEN }}
