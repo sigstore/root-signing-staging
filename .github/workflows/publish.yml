@@ -1,4 +1,4 @@
-name: TUF-on-CI publish to GitHub Pages
+name: TUF-on-CI publish
 
 permissions: {}
 
@@ -22,7 +22,7 @@ jobs:
           ref: ${{ inputs.ref }}
           metadata_path: './'
 
-  deploy:
+  deploy-to-pages:
     permissions:
       pages: write
       id-token: write # for authenticating to GH Pages
@@ -34,10 +34,10 @@ jobs:
     steps:
       - name: Deploy TUF-on-CI repository to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@7a9bd943aa5e5175aeb8502edcc6c1c02d398e10 # v4.0.2
+        uses: actions/deploy-pages@decdde0ac072f6dcbe43649d82d9c635fff5b4e4 # v4.0.4
 
   test-deployed-repository:
-    needs: deploy
+    needs: deploy-to-pages
     permissions:
       issues: 'write' # for modifying Issues
       id-token: 'write' # for signing with the GitHub Actions workflow identity
@@ -45,7 +45,7 @@ jobs:
 
   update-issue:
     runs-on: ubuntu-latest
-    needs: [build, deploy, test-deployed-repository]
+    needs: [build, deploy-to-pages, test-deployed-repository]
     if: always() && !cancelled()
     permissions:
       issues: 'write' # for modifying Issues
