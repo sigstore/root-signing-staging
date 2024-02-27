@@ -1,16 +1,20 @@
 {
   "invites": {
     "@kommendorkapten": [
-      "root"
+      "root",
+      "targets"
     ],
     "@joshuagl": [
-      "root"
+      "root",
+      "targets"
     ],
     "@mnm678": [
-      "root"
+      "root",
+      "targets"
     ],
     "@dlorenc": [
-      "root"
+      "root",
+      "targets"
     ]
   }
 }

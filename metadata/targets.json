@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "3045022100e5ed5f6b34d7ed0a2d260ea2029ab6366771e09768c47c680cad6c7ed38e4ecd02204a9713f0f5b3180a79e2b88e135dd5eb98534f25f176d541db7be7e0848c2279"
+   "sig": ""
   }
  ],
  "signed": {
@@ -32,7 +32,7 @@
     }
    ]
   },
-  "expires": "2034-01-06T09:02:56Z",
+  "expires": "2024-04-09T10:02:27Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -127,8 +127,8 @@
     "length": 7256
    }
   },
-  "version": 5,
-  "x-tuf-on-ci-expiry-period": 3650,
-  "x-tuf-on-ci-signing-period": 365
+  "version": 6,
+  "x-tuf-on-ci-expiry-period": 42,
+  "x-tuf-on-ci-signing-period": 28
  }
 }
