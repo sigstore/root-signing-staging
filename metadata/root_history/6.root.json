@@ -6,13 +6,13 @@
   },
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "3046022100d6d267e4397fe5acca8e0f0a8eb2b2e4b064c9d5d7a10089b4a57c8f5875afac022100d469bfd4f4c777efbd2f1807c0bfd95700f811a9661fbacfa3bee5c1657e3840"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-02-24T09:53:44Z",
+  "expires": "2034-02-24T10:00:24Z",
   "keys": {
    "5416a7a35ef827abc651e200ac11f3d23e9db74ef890b1fedb69fb2a152ebac5": {
     "keytype": "ecdsa",
@@ -29,27 +29,14 @@
     },
     "scheme": "ecdsa-sha2-nistp256",
     "x-tuf-on-ci-keyowner": "@jku"
-   },
-   "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda": {
-    "keyid_hash_algorithms": [
-     "sha256",
-     "sha512"
-    ],
-    "keytype": "ecdsa-sha2-nistp256",
-    "keyval": {
-     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL3vL/VeaH6nBbo4rekyO4cc/QthS\n+nlyJXCXSnyIMAtLmVTa8Pf0qG6YIVaR0TmLkyk9YoSVsZakxuMTuaEwrg==\n-----END PUBLIC KEY-----\n"
-    },
-    "scheme": "ecdsa-sha2-nistp256",
-    "x-tuf-on-ci-keyowner": "@-repo-import"
    }
   },
   "roles": {
    "root": {
     "keyids": [
-     "c8e09a68b5821b75462ae0df52151c81deb7f1838246dc1da8c34cc91ec12bda",
      "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
     ],
-    "threshold": 1
+    "threshold": 2
    },
    "snapshot": {
     "keyids": [
