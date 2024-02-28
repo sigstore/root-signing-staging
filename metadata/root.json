@@ -15,12 +15,16 @@
   {
    "keyid": "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5",
    "sig": ""
+  },
+  {
+   "keyid": "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35",
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2034-02-25T10:15:56Z",
+  "expires": "2034-02-25T17:28:20Z",
   "keys": {
    "5416a7a35ef827abc651e200ac11f3d23e9db74ef890b1fedb69fb2a152ebac5": {
     "keytype": "ecdsa",
@@ -37,6 +41,14 @@
     },
     "scheme": "ecdsa-sha2-nistp256",
     "x-tuf-on-ci-keyowner": "@jku"
+   },
+   "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoxkvDOmtGEknB3M+ZkPts8joDM0X\nIH5JZwPlgC2CXs/eqOuNF8AcEWwGYRiDhV/IMlQw5bg8PLICQcgsbrDiKg==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256",
+    "x-tuf-on-ci-keyowner": "@mnm678"
    },
    "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5": {
     "keytype": "ecdsa",
@@ -60,7 +72,8 @@
     "keyids": [
      "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
      "d7d2d47a3f644fc3a685bac7b39c81ed9f9cee48ff861b44fbd86b91e34e7829",
-     "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5"
+     "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5",
+     "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35"
     ],
     "threshold": 2
    },
@@ -76,7 +89,8 @@
     "keyids": [
      "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
      "d7d2d47a3f644fc3a685bac7b39c81ed9f9cee48ff861b44fbd86b91e34e7829",
-     "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5"
+     "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5",
+     "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35"
     ],
     "threshold": 1
    },
