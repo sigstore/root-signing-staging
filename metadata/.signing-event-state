@@ -1,7 +1,6 @@
 {
   "invites": {
     "@dlorenc": [
-      "root",
       "targets"
     ]
   }
