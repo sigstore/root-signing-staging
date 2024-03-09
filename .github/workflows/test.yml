@@ -21,6 +21,8 @@ jobs:
     permissions:
       id-token: 'write' # For signing with the GitHub workflow identity
     uses: ./.github/workflows/custom-test.yml
+    with:
+      metadata_url: https://sigstore.github.io/root-signing-staging/
 
   update-issue:
     runs-on: ubuntu-latest
