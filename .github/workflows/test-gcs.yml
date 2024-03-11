@@ -1,5 +1,4 @@
 name: root-signing GCS repository tests
-description: Verify with clients that the final deployment (on GCS) works
 
 on:
   workflow_call:

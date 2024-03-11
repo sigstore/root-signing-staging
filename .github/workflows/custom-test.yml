@@ -6,6 +6,7 @@ on:
       metadata_url:
         description: "URL of the sigstore staging TUF repository to test"
         required: true
+        type: string
 
 permissions: {}
 
