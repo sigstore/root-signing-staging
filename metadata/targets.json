@@ -2,7 +2,11 @@
  "signatures": [
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "304502207915355419904d794ad569ce2e6e8d6e187adab2f0f040e5e956fc59109ab764022100faa3ba41a43868d8fbb29bbcd2eb0a1d9d7f74333077b3250cf090af0a92b208"
+   "sig": ""
+  },
+  {
+   "keyid": "d7d2d47a3f644fc3a685bac7b39c81ed9f9cee48ff861b44fbd86b91e34e7829",
+   "sig": ""
   },
   {
    "keyid": "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5",
@@ -11,10 +15,6 @@
   {
    "keyid": "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35",
    "sig": ""
-  },
-  {
-   "keyid": "d7d2d47a3f644fc3a685bac7b39c81ed9f9cee48ff861b44fbd86b91e34e7829",
-   "sig": "3046022100b0bde483a8bfb4678e504f00827566d8af49785ea2f42504c06da27a4924ef0c02210080eb8b9e2d3c8a40c8e0a0c4c8d11a770a56fcb38c40a5b801ceb924647e5eb5"
   }
  ],
  "signed": {
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2024-04-23T13:21:37Z",
+  "expires": "2024-06-26T12:38:57Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -140,7 +140,7 @@
    }
   },
   "version": 7,
-  "x-tuf-on-ci-expiry-period": 42,
-  "x-tuf-on-ci-signing-period": 28
+  "x-tuf-on-ci-expiry-period": 91,
+  "x-tuf-on-ci-signing-period": 35
  }
 }
