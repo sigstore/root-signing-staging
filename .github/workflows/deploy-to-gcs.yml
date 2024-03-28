@@ -49,5 +49,6 @@ jobs:
               repository/ $BUCKET
           gcloud storage cp --cache-control=no-store repository/timestamp.json $BUCKET
 
-          # invalidate CDN cache
-          gcloud compute url-maps invalidate-cdn-cache $LOAD_BALANCER --path "/*" --async
+          # invalidate CDN cache. This can take a while. We don't use "--async"
+          # because we want CDN to be testable when workflow finishes
+          gcloud compute url-maps invalidate-cdn-cache $LOAD_BALANCER --path "/*"
