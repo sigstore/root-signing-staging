@@ -48,6 +48,3 @@ jobs:
           gcloud storage rsync --cache-control=no-store --recursive --exclude=timestamp.json \
               repository/ $BUCKET
           gcloud storage cp --cache-control=no-store repository/timestamp.json $BUCKET
-
-          # invalidate CDN cache
-          gcloud compute url-maps invalidate-cdn-cache $LOAD_BALANCER --path "/*" --async
