@@ -16,6 +16,8 @@ jobs:
         uses: theupdateframework/tuf-on-ci/actions/test-repository@ebf63d46b20e8c019e7752f8fb57c28931f96cfc # v0.9.0
         with:
           metadata_url: https://tuf-repo-cdn.sigstage.dev/
+          valid_days: 3
+          offline_valid_days: 30
 
   custom-smoke-test:
     permissions:
