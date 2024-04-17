@@ -13,6 +13,7 @@ permissions:
 
 env:
   STAGING_URL: ${{ inputs.metadata_url }}
+  IDENTITY: ${{ github.server_url }}/${{ github.repository }}/.github/workflows/custom-test.yml@${{ github.ref }}
 
 jobs:
   sigstore-python:
@@ -35,7 +36,6 @@ jobs:
 
       - name: Test published repository with sigstore-python
         run: |
-          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
           # sign, then verify using this workflows oidc identity
           python -m sigstore -vv --staging sign artifact
@@ -57,7 +57,6 @@ jobs:
 
       - name: Test published repository with cosign
         run: |
-          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
 
           # initialize from the published repository
@@ -100,7 +99,6 @@ jobs:
 
       - name: Test published repository with sigstore-go
         run: |
-          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
 
           ~/go/bin/sigstore-go \
@@ -130,7 +128,6 @@ jobs:
 
       - name: Test published repository with sigstore-js
         run: |
-          IDENTITY="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/.github/workflows/custom-test.yml@$GITHUB_REF"
           touch artifact
 
           sigstore verify \
