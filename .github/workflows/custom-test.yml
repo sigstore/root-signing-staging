@@ -46,6 +46,7 @@ jobs:
         with:
           name: bundle
           path: artifact.sigstore
+          overwrite: true
 
   cosign:
     runs-on: ubuntu-latest
