@@ -38,14 +38,14 @@ jobs:
         run: |
           touch artifact
           # sign, then verify using this workflows oidc identity
-          python -m sigstore -vv --staging sign artifact
-          python -m sigstore --staging verify github --cert-identity $IDENTITY artifact
+          python -m sigstore -vv --staging sign --bundle artifact.sigstore.json artifact
+          python -m sigstore --staging verify github --cert-identity $IDENTITY --bundle artifact.sigstore.json artifact
 
       - name: Upload the bundle for other clients to verify
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: bundle
-          path: artifact.sigstore
+          path: artifact.sigstore.json
           overwrite: true
 
   cosign:
@@ -108,7 +108,7 @@ jobs:
               -expectedSAN $IDENTITY \
               -expectedIssuer https://token.actions.githubusercontent.com \
               -artifact artifact \
-              artifact.sigstore
+              artifact.sigstore.json
 
   sigstore-js:
     runs-on: ubuntu-latest
@@ -137,4 +137,4 @@ jobs:
               --certificate-identity-uri $IDENTITY \
               --certificate-issuer https://token.actions.githubusercontent.com \
               --blob-file=artifact \
-              artifact.sigstore
+              artifact.sigstore.json
