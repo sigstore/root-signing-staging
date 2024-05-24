@@ -2,19 +2,19 @@
  "signatures": [
   {
    "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "304502202664d636ca5beb8684e27dd73a5e1888b8bc9218a55cbffa3eba9a28e123680a022100eae337de68de83ca7f575f28d21b741670409dd58aa4766341f3bf37d259c6c9"
+   "sig": "304502201989ce3dd633df96c694af1a1088aad8353fab60dc968b0fe85dc38fb5dcf2730221008f20c5714839324f4a6e0e9681ee36ced6a2ffbf702e0bd66be62a1b3200aecf"
   },
   {
    "keyid": "d7d2d47a3f644fc3a685bac7b39c81ed9f9cee48ff861b44fbd86b91e34e7829",
-   "sig": "304502206b8d4ea34d123a8b9959ba648443cee28efedc5734ce33e883739dbe62514853022100c7a7c9683b7dc5cd3a654a4cc69605b6dcdad3926d52b0fc2560e47adf2d5e4e"
+   "sig": "304402200cbe00a27936c3faa31a6de8a0ba88ea0f1a5d93a65c81fc7eac56a84ac2612e02205e25a2652147406b058d34aedcf019d0d882727baed5ebbc9020be8f2be1a327"
   },
   {
    "keyid": "b78c9e4ff9048a1d9876a20f97fa1b3cb03223a0c520c7de730cfa9f5c7b77e5",
-   "sig": "3045022064044f78cbe7215e2fe2aaa10695f94487a8e23efb938db5b83aeb1a753403be022100a2d35caa2e1a22bda153e4c60e8cebc6adb9dc267383ab31677e3af059af8069"
+   "sig": "30440220191c371237616d713434fd7ccd5cb85a69ae1dce25e793be2a362857e3bb4c190220329895ccc4f629899010b9a5a45e888d952a814b255f381e1afca3aeafa2a50f"
   },
   {
    "keyid": "afd6a6ebad62a0dd091db368c1806eeb172c893c80bece1098fed116e985ba35",
-   "sig": "304402205c5167cb4af91d255e57cf704c01e93b4f508221a7b7b3de812008bec84f93fe02204df6a3694cc227527f07f8130e4a414b064d620deb8c0b8ba2a8231b28867e46"
+   "sig": "304402203083082ac69cb200341852e06b7e4b69fe8175c81664cfb2a11ee38609ff5f9f02202da9ddfe917f3d76cda74b53950a4dbbebcd99ddb815e6f67220e92cccb34744"
   }
  ],
  "signed": {
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2024-06-26T12:38:57Z",
+  "expires": "2034-05-21T06:37:15Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -139,8 +139,8 @@
     "length": 7256
    }
   },
-  "version": 7,
-  "x-tuf-on-ci-expiry-period": 91,
-  "x-tuf-on-ci-signing-period": 35
+  "version": 8,
+  "x-tuf-on-ci-expiry-period": 3650,
+  "x-tuf-on-ci-signing-period": 365
  }
 }
