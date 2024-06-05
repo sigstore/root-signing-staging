@@ -17,10 +17,12 @@ More detail:
 * [signer manual](docs/signer-manual.md) documents the process and requirements from
   signers perspective
 
-### Operation
+### Repository status
 
-root-signing-staging publishes the TUF repository at `https://tuf-repo-cdn.sigstage.dev/` 
-(see e.g. [current timestamp metadata](https://tuf-repo-cdn.sigstage.dev/timestamp.json)).
+Current signers and next known signing events are documented in the generated
+repository description: https://tuf-repo-cdn.sigstage.dev/.
+
+### Operation
 
 The TUF repository is modified in two ways:
 1. _signing events_ where human signers collaborate to sign changes with hardware keys and
@@ -44,6 +46,13 @@ Online signing happens in two situations:
 * A online signature is close to expiry
 
 In practice online signing happens at least every three days because of online signature expiry.
+
+#### Publishing and automated testing
+
+Online signing leads to a "preproduction" staging deployment at https://sigstore.github.io/root-signing-staging/.
+This is a fully functional TUF reppository that is then used to run both generic TUF client tests and
+Sigstore specific client tests (with cosign and other sigstore clients). Successful tests lead to a
+"production" staging deployment at https://tuf-repo-cdn.sigstage.dev/.
 
 ### Workflows
 
