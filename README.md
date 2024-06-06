@@ -19,7 +19,7 @@ More detail:
 
 ### Repository status
 
-Current signers and next known signing events are documented in the generated
+Current signers and next known signing events are documented in the automatically generated
 repository description: https://tuf-repo-cdn.sigstage.dev/.
 
 ### Operation
@@ -49,10 +49,10 @@ In practice online signing happens at least every three days because of online s
 
 #### Publishing and automated testing
 
-Online signing leads to a "preproduction" staging deployment at https://sigstore.github.io/root-signing-staging/.
+Online signing leads to a "testing" staging deployment at https://sigstore.github.io/root-signing-staging/.
 This is a fully functional TUF reppository that is then used to run both generic TUF client tests and
 Sigstore specific client tests (with cosign and other sigstore clients). Successful tests lead to a
-"production" staging deployment at https://tuf-repo-cdn.sigstage.dev/.
+"final" staging deployment at https://tuf-repo-cdn.sigstage.dev/.
 
 ### Workflows
 
