@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "3046022100f733fc53da762b6c57a3db796b32a25f1ee7c2898fd8cfea9dbcfe67ddd5da6e022100894ad928f36683f895ffee596da0e24819d631223b54da816cd66b98b35738e5"
+   "sig": ""
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
@@ -21,7 +21,7 @@
   "_type": "targets",
   "delegations": {
    "keys": {
-    "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93": {
+    "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81": {
      "keytype": "ecdsa",
      "keyval": {
       "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEohqIdE+yTl4OxpX8ZxNUPrg3SL9H\nBDnhZuceKkxy2oMhUOxhWweZeG3bfM1T4ZLnJimC6CAYVU5+F5jZCoftRw==\n-----END PUBLIC KEY-----\n"
@@ -33,7 +33,7 @@
    "roles": [
     {
      "keyids": [
-      "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93"
+      "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81"
      ],
      "name": "registry.npmjs.org",
      "paths": [
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2034-06-29T11:42:30Z",
+  "expires": "2034-06-29T11:52:41Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
