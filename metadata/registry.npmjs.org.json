@@ -1,17 +1,13 @@
 {
  "signatures": [
   {
-   "keyid": "314ae73abd3012fc73bfcc3783e31d03852716597642b891d6a33155c4baf600",
-   "sig": ""
-  },
-  {
-   "keyid": "762cb22caca65de5e9b7b6baecb84ca989d337280ce6914b6440aea95769ad93",
-   "sig": "3045022100dbcf90a4fe0364cd40017c6150c945492c6d8e775586ad9a6f0b719567a767d8022001beaa7f370a6154d9e9597bdfb424004575595e4e9b0399d81d11ded9ff8620"
+   "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
+   "sig": "3044022026ba998aa2fc73d7613c72c0b21d7eab74f579e0dc26a1a179daa3b004d4629e022059e86169b1fc345835b52e816ae36e1609932e7a481851a1a89a65b0184a9802"
   }
  ],
  "signed": {
   "_type": "targets",
-  "expires": "2034-01-06T08:54:04Z",
+  "expires": "2034-06-29T11:52:41Z",
   "spec_version": "1.0",
   "targets": {
    "registry.npmjs.org/keys.json": {
@@ -22,7 +18,7 @@
     "length": 1017
    }
   },
-  "version": 3,
+  "version": 4,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
