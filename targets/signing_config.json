@@ -1,0 +1,7 @@
+{
+  "caUrl": "https://fulcio.sigstage.dev",
+  "oidcUrl": "https://oauth2.sigstage.dev/auth/",
+  "tlogUrls": [
+    "https://rekor.sigstage.dev"
+  ]
+}
