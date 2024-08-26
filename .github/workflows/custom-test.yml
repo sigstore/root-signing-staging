@@ -139,42 +139,42 @@ jobs:
               --blob-file=artifact \
               artifact.sigstore.json
 
-#  sigstore-java:
-#    runs-on: ubuntu-latest
-#    needs: [sigstore-python]
-#    steps:
-#      - name: Set up JDK
-#        uses: actions/setup-java@6a0805fcefea3d4657a47ac4c165951e33482018 # v4.2.2
-#        with:
-#          java-version: 17
-#          distribution: 'temurin'
-#
-#      - name: Setup Gradle
-#        uses: gradle/actions/setup-gradle@v4
-#
-#      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
-#        with:
-#          repository: "sigstore/sigstore-java"
-#          fetch-tags: true
-#
-#      - name: Build cli from latest release tag, unpack distribution
-#        run: |
-#          git checkout $(git describe --tags --match="v[0-9]*" HEAD)
-#          ./gradlew :sigstore-cli:build
-#          tar -xvf sigstore-cli/build/distributions/sigstore-cli-*.tar --strip-components 1
-#
-#      - name: Download bundle to verify
-#        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
-#        with:
-#          name: bundle
-#
-#      - name: Test published repository with sigstore-java
-#        run: |
-#          touch artifact
-#
-#          bin/sigstore-cli verify-bundle \
-#              --staging-with-tuf-url-override $STAGING_URL \
-#              --bundle artifact.sigstore.json \
-#              --certificate-identity $IDENTITY \
-#              --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-#              artifact
+  sigstore-java:
+    runs-on: ubuntu-latest
+    needs: [sigstore-python]
+    steps:
+      - name: Set up JDK
+        uses: actions/setup-java@6a0805fcefea3d4657a47ac4c165951e33482018 # v4.2.2
+        with:
+          java-version: 17
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        with:
+          repository: "sigstore/sigstore-java"
+          fetch-tags: true
+
+      - name: Build cli from latest release tag, unpack distribution
+        run: |
+          git checkout $(git describe --tags --match="v[0-9]*" HEAD)
+          ./gradlew :sigstore-cli:build
+          tar -xvf sigstore-cli/build/distributions/sigstore-cli-*.tar --strip-components 1
+
+      - name: Download bundle to verify
+        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+        with:
+          name: bundle
+
+      - name: Test published repository with sigstore-java
+        run: |
+          touch artifact
+
+          bin/sigstore-cli verify-bundle \
+              --staging-with-tuf-url-override $STAGING_URL \
+              --bundle artifact.sigstore.json \
+              --certificate-identity $IDENTITY \
+              --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+              artifact
