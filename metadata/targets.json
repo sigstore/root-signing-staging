@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "30450221008b880b0dd5e8a9cfc08e036b2e703ed8eed647eb63d7b9a4adf844490c11577402206981787fc803b6c33e748975049315040a416b75720973945af8f8d9cf081e39"
+   "sig": "3044022058e3c50f39cb0ec6eec21028065985eea5d665fe9749029c9b881d99d934258d02200c6b458589de66f60e5bcfb8691cf539fefdcfb79f52fc49e9ff18d00413944f"
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": "3046022100f33d70a02f1f071717e424f76e5244b75e45a83ec06638d58713de618b32f669022100c0d0002e6d44ffb1085b0bf97cc834cedf123d4a5dce8d150c8aba92d811cb95"
+   "sig": "3045022100859227cf8b3e939027494dca514139b8ab699cd63ea42f8ceca6d9aa5df0c7470220278d8037fc824688f03b9e68f807c01e6d5608798324ea726d3a2ccc4e13b533"
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -21,19 +21,19 @@
   "_type": "targets",
   "delegations": {
    "keys": {
-    "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81": {
+    "5e3a4021b11a425fd0a444f1670457ce5b15bbe036144f2417426f7f4b9721da": {
      "keytype": "ecdsa",
      "keyval": {
-      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEohqIdE+yTl4OxpX8ZxNUPrg3SL9H\nBDnhZuceKkxy2oMhUOxhWweZeG3bfM1T4ZLnJimC6CAYVU5+F5jZCoftRw==\n-----END PUBLIC KEY-----\n"
+      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVfei1dXQRVeArCMcTDgxJtYg+Fs7\nV87DjhQbGlRJPyC7SW5TbNNkmvpmi4LeTv6moLVZ7T2nVqiRZbSkD+cf8w==\n-----END PUBLIC KEY-----\n"
      },
      "scheme": "ecdsa-sha2-nistp256",
-     "x-tuf-on-ci-keyowner": "@jku"
+     "x-tuf-on-ci-online-uri": "azurekms://npm-tuf-delegate.vault.azure.net/keys/npm-tuf-delegate-2024-08/e2772c1d01ca400da571096889f1660e"
     }
    },
    "roles": [
     {
      "keyids": [
-      "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81"
+      "5e3a4021b11a425fd0a444f1670457ce5b15bbe036144f2417426f7f4b9721da"
      ],
      "name": "registry.npmjs.org",
      "paths": [
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2034-08-21T06:53:38Z",
+  "expires": "2034-08-24T07:49:10Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -138,7 +138,7 @@
     "length": 4581
    }
   },
-  "version": 11,
+  "version": 12,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
