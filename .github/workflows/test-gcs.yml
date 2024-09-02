@@ -16,8 +16,9 @@ jobs:
         uses: theupdateframework/tuf-on-ci/actions/test-repository@89d2dad3c8b626dde7a9e65b036ca35d11ab8b2a # v0.12.0
         with:
           metadata_url: https://tuf-repo-cdn.sigstage.dev/
-          valid_days: 3
-          offline_valid_days: 16
+          # when workflow is reused in publish.yml, do not require future validity
+          valid_days:  ${{ github.event_name == 'workflow_call' && 0 || 3 }}
+          offline_valid_days: ${{ github.event_name == 'workflow_call' && 0 || 16 }}
 
   custom-smoke-test:
     permissions:
