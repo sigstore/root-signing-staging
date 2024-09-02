@@ -17,7 +17,7 @@ jobs:
         with:
           metadata_url: https://tuf-repo-cdn.sigstage.dev/
           valid_days: 3
-          offline_valid_days: 30
+          offline_valid_days: 16
 
   custom-smoke-test:
     permissions:
