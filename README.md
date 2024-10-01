@@ -2,20 +2,21 @@
 
 Sigstore uses a TUF repository to securely deliver the _Sigstore trust root
 (trusted_root.json)_ to Sigstore clients, see
-[root-signing](https://github.com/sigstore/root-signing). This project maintains
+[root-signing](https://github.com/sigstore/root-signing).
+
+This project maintains
 a **staging** version of the root-signing TUF repository using
 [tuf-on-ci](https://github.com/theupdateframework/tuf-on-ci): this is a development
 and testing resource and should never be used as an actual source of truth by
-Sigstore clients.
-
-While the plan is to eventually maintain root-signing with the same processes as
-root-signing-staging, this is not currently the case.
+Sigstore clients. It should be used by client CI systems to verify that the clients
+are compatible with e.g. upcoming changes to _trusted_root.json_ -- possibly via
+[sigstore-conformance](https://github.com/sigstore/sigstore-conformance). 
 
 More detail:
 * [infrastructure doc](docs/infrastructure.md) goes into detail about the required
   services and configuration.
-* [signer manual](docs/signer-manual.md) documents the process and requirements from
-  signers perspective
+* [root-signing](https://github.com/sigstore/root-signing) playbooks and documentation
+  largely apply to this repository as well.
 
 ### Repository status
 
