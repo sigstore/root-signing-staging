@@ -189,6 +189,7 @@ jobs:
           repository: "sigstore/sigstore-java"
           fetch-tags: true
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Build cli from latest release tag, unpack distribution
         run: |
