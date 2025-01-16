@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 4,10,16,22 * * *'
+  pull_request:
+    paths: ['.github/workflows/*']
 
 permissions: {}
 
@@ -31,8 +33,8 @@ jobs:
   update-issue:
     runs-on: ubuntu-latest
     needs: [smoke-test, custom-smoke-test]
-    # During workflow_call, caller updates issue
-    if: always() && !cancelled() && github.workflow == 'TUF-on-CI repository tests'
+    # During workflow_call, caller updates issue. During pull_request, issue updates are not needed
+    if: always() && !cancelled() && github.workflow == 'TUF-on-CI repository tests' && github.event_name != 'pull_request'
     permissions:
       issues: 'write' # for modifying Issues
     steps:

@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 4,10,16,22 * * *'
+  pull_request:
+    paths: ['.github/workflows/*']
 
 permissions: {}
 
@@ -31,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [smoke-test, custom-smoke-test]
     # During workflow_call, caller updates issue
-    if: always() && !cancelled() && github.workflow == 'root-signing GCS repository tests'
+    if: always() && !cancelled() && github.workflow == 'root-signing GCS repository tests' && github.event_name != 'pull_request'
     permissions:
       issues: 'write' # for modifying Issues
     steps:
