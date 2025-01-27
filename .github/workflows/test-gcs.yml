@@ -17,7 +17,7 @@ jobs:
         with:
           metadata_url: https://tuf-repo-cdn.sigstage.dev/
           # when workflow is reused in publish.yml, do not require future validity
-          valid_days:  ${{ github.event_name == 'workflow_call' && 0 || 3 }}
+          valid_days:  ${{ github.event_name == 'workflow_call' && 0 || 5 }}
           offline_valid_days: ${{ github.event_name == 'workflow_call' && 0 || 16 }}
 
   custom-smoke-test:
