@@ -120,7 +120,7 @@ jobs:
           check-latest: true
 
       - name: Install sigstore-go
-        run: go install github.com/sigstore/sigstore-go/cmd/sigstore-go@latest
+        run: go install github.com/sigstore/sigstore-go/examples/sigstore-go-verification@latest
 
       - name: Download initial root
         run: curl -o root.json ${STAGING_URL}/1.root.json
@@ -134,7 +134,7 @@ jobs:
         run: |
           touch artifact
 
-          ~/go/bin/sigstore-go \
+          ~/go/bin/sigstore-go-verification \
               -tufRootURL $STAGING_URL \
               -tufTrustedRoot root.json \
               -expectedSAN $IDENTITY \
