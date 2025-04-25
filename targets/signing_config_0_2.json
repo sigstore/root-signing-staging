@@ -11,7 +11,7 @@
   ],
   "oidcUrls": [
     {
-      "url": "https://oauth2.sigstage.dev/auth/",
+      "url": "https://oauth2.sigstage.dev/auth",
       "majorApiVersion": 1,
       "validFor": {
         "start": "2025-04-16T00:00:00Z"
