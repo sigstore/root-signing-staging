@@ -6,7 +6,7 @@
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": "304402207cc49686a9545bbe35635fc392c87487510c94a88d3dd3a9900a0caedb19808e02201edb3cc64827e677ccfb1e479ad80dd020aa89655c4d92501c80f5d045102c8a"
+   "sig": ""
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2035-05-17T12:16:57Z",
+  "expires": "2035-05-18T08:53:42Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -139,12 +139,12 @@
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "150ffaf975fb06a5cedf3b3df2fd896f63cd381b2b588330ea29b1a36ea324af"
+     "sha256": "3f8ab41b9311910106caf66cb5e4117b1bee0d1871def4e816c6c60cee69d421"
     },
-    "length": 6603
+    "length": 6399
    }
   },
-  "version": 14,
+  "version": 15,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
