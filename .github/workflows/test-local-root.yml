@@ -60,7 +60,7 @@ jobs:
           run: |
             # sign, then verify using this workflows oidc identity
             python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} sign --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v && \
-            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} verify github --cert-identity ${{ env.TEST_ARTIFACT }} --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
+            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} verify github --cert-identity ${{ env.IDENTITY }} --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
 
     sigstore-go:
       needs: trust-config
