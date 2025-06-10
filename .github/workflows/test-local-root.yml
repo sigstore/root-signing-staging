@@ -61,9 +61,11 @@ jobs:
           with:
             artifact-ids: ${{ needs.trust-config.outputs.trust-config-artifact-id }}
         - name: build sigstore-python trust-config
-          # sigstore-python currently uses a non-standard "trust_config".
+          # sigstore-python currently uses a non-standard "trust_config" with the older signing_config format.
+          env:
+            MEDIA_TYPE: application/vnd.dev.sigstore.clienttrustconfig.v0.1+json
           run: |
-            jq -n '{trustedRoot: input, signingConfig: input}' ${{ env.TRUSTED_ROOT_V01 }} ${{ env.SIGNING_CONFIG_V01 }} > ${{ env.SIGSTORE_PYTHON_TRUST_CONFIG }}
+            jq -n '{trustedRoot: input, signingConfig: input}' ${{ env.TRUSTED_ROOT_V01 }} ${{ env.SIGNING_CONFIG_V01 }} | jq '.+ {"mediaType": "${{ env.MEDIA_TYPE }}"}' > ${{ env.SIGSTORE_PYTHON_TRUST_CONFIG }}
         - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         - run: pip install sigstore
         - name: sign
