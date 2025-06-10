@@ -9,7 +9,11 @@ permissions: {}
 env:
   UPLOAD_ARTIFACT_NAME: trust-config-files
   TRUST_CONFIG: ./trust_config.json
+  SIGNING_CONFIG: ./targets/signing_config.json
+  TRUSTED_ROOT: ./targets/trusted_root.json
   IDENTITY: ${{ github.server_url }}/${{ github.workflow_ref }}
+  ISSUER: https://token.actions.githubusercontent.com
+  TEST_ARTIFACT: ./hello.txt
 
 jobs:
     trust-config:
@@ -18,9 +22,6 @@ jobs:
       permissions:
         contents: read
       runs-on: ubuntu-latest
-      env:
-        SIGNING_CONFIG: ./targets/signing_config.json
-        TRUSTED_ROOT: ./targets/trusted_root.json
       steps:
         - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         - name: create config files
@@ -28,6 +29,8 @@ jobs:
             MEDIA_TYPE: application/vnd.dev.sigstore.clienttrustconfig.v0.1+json
           run: |
             jq -n '{trustedRoot: input, signingConfig: input}' ${{ env.TRUSTED_ROOT }} ${{ env.SIGNING_CONFIG }} | jq '.+ {"mediaType": "${{ env.MEDIA_TYPE }}"}' > ${{ env.TRUST_CONFIG }}
+        - name: create test artifact
+          run: echo "hi" > ${{ env.TEST_ARTIFACT }}
         - id: upload
           uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
           with:
@@ -37,6 +40,7 @@ jobs:
               ${{ env.SIGNING_CONFIG }}
               ${{ env.TRUSTED_ROOT }}
               ${{ env.TRUST_CONFIG }}
+              ${{ env.TEST_ARTIFACT }}
 
 
     sigstore-python:
@@ -45,9 +49,6 @@ jobs:
         id-token: write # For signing with the GitHub workflow identity
         contents: read
       runs-on: ubuntu-latest
-      env:
-        TRUST_CONFIG: ./trust_config.json
-        IDENTITY: ${{ github.server_url }}/${{ github.workflow_ref }}
       steps:
         - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
           with:
@@ -55,11 +56,37 @@ jobs:
         - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         - run: pip install sigstore
         - name: sign and verify
-          env:
-            ARTIFACT: ./README.md
           working-directory: ${{ env.UPLOAD_ARTIFACT_NAME }}
           run: |
-            echo "hi" > ${{ env.ARTIFACT }}
             # sign, then verify using this workflows oidc identity
-            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} sign --bundle artifact.sigstore.json ${{ env.ARTIFACT }} -v
-            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} verify github --cert-identity ${{ env.IDENTITY }} --bundle artifact.sigstore.json ${{ env.ARTIFACT }} -v
+            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} sign --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v && \
+            python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} verify github --cert-identity ${{ env.TEST_ARTIFACT }} --bundle artifact.sigstore.json ${{ env.ARTIFACT }} -v
+
+    sigstore-go:
+      needs: trust-config
+      permissions:
+        id-token: write # For signing with the GitHub workflow identity
+        contents: read
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        - name: Install sigstore-go
+          run: |
+            go install github.com/sigstore/sigstore-go/examples/sigstore-go-verification@latest
+            go install github.com/sigstore/sigstore-go/examples/sigstore-go-signing@latest
+        - name: sign and verify
+          env:
+            TEST_BUNDLE: ./test-bundle.sigstore.json
+          run: |
+            ~/go/bin/sigstore-go-signing \
+              -tufTrustedRoot ${{ env.TRUSTED_ROOT }} \
+              -expectedSAN ${{ env.IDENTITY }} \
+              -expectedIssuer ${{ env.ISSUER }} \
+              -artifact ${{ env.TEST_ARTIFACT }} \
+              ${{ env.TEST_BUNDLE }} && \
+            ~/go/bin/sigstore-go-verification \
+              -tufTrustedRoot ${{ env.TRUSTED_ROOT }} \
+              -expectedSAN ${{ env.IDENTITY }} \
+              -expectedIssuer ${{ env.ISSUER }} \
+              -artifact ${{ env.TEST_ARTIFACT }} \
+              ${{ env.TEST_BUNDLE }} 
