@@ -69,6 +69,9 @@ jobs:
         contents: read
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+          with:
+            artifact-ids: ${{ needs.trust-config.outputs.trust-config-artifact-id }}
         - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         - name: Install sigstore-go
           run: |
