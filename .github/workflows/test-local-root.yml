@@ -57,7 +57,7 @@ jobs:
           env:
             ARTIFACT: ./README.md
           run: |
-            touch artifact
+            echo "hi" > ${{ env.ARTIFACT }}
             # sign, then verify using this workflows oidc identity
             python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} sign --bundle artifact.sigstore.json ${{ env.ARTIFACT }} -v
             python -m sigstore --trust-config ${{ env.TRUST_CONFIG }} verify github --cert-identity ${{ env.IDENTITY }} --bundle artifact.sigstore.json ${{ env.ARTIFACT }} -v
