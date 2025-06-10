@@ -10,6 +10,7 @@ env:
   UPLOAD_ARTIFACT_NAME: trust-config-files
   TRUST_CONFIG: ./trust_config.json
   SIGNING_CONFIG: ./targets/signing_config.json
+  SIGNING_CONFIG_V02: ./targets/signing_config.v0.2.json
   TRUSTED_ROOT: ./targets/trusted_root.json
   IDENTITY: ${{ github.server_url }}/${{ github.workflow_ref }}
   ISSUER: https://token.actions.githubusercontent.com
@@ -38,6 +39,7 @@ jobs:
             if-no-files-found: error
             path: |
               ${{ env.SIGNING_CONFIG }}
+              ${{ env.SIGNING_CONFIG_V02 }}
               ${{ env.TRUSTED_ROOT }}
               ${{ env.TRUST_CONFIG }}
               ${{ env.TEST_ARTIFACT }}
@@ -89,7 +91,7 @@ jobs:
         - name: sign
           run: |
             ~/go/bin/sigstore-go-signing \
-              -signing-config ${{ env.SIGNING_CONFIG }} \
+              -signing-config ${{ env.SIGNING_CONFIG_V02 }} \
               -trusted-root ${{ env.TRUSTED_ROOT }} \
               ${{ env.TEST_ARTIFACT }} > ${{ env.TEST_BUNDLE }}
         - name: verify
