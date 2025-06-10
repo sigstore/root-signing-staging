@@ -8,6 +8,8 @@ permissions: {}
 
 jobs:
     pre-submit:
+      permissions:
+        id-token: 'write' # For signing with the GitHub workflow identity
       uses: ./.github/workflows/custom-test.yml
       with:
         metadata_url: https://${{ github.repository }}/blob/${{ github.sha }}/metadata/
