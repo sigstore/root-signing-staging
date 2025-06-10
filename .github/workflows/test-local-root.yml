@@ -1,4 +1,4 @@
-name: Test with PR root
+name: Test with PR trusted root and singing config.
 
 on:
   workflow_dispatch:
