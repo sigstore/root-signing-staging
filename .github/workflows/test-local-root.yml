@@ -1,0 +1,12 @@
+name: Test with PR root
+
+on:
+  pull_request:
+
+permissions: {}
+
+jobs:
+    pre-submit:
+      uses: ./.github/workflows/custom-test.yml
+      with:
+        metadata_url: https://${{ github.repository }}/blob/${{ github.sha }}/metadata/
