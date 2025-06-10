@@ -79,11 +79,9 @@ jobs:
             TEST_BUNDLE: ./test-bundle.sigstore.json
           run: |
             ~/go/bin/sigstore-go-signing \
-              -tufTrustedRoot ${{ env.TRUSTED_ROOT }} \
-              -expectedSAN ${{ env.IDENTITY }} \
-              -expectedIssuer ${{ env.ISSUER }} \
-              -artifact ${{ env.TEST_ARTIFACT }} \
-              ${{ env.TEST_BUNDLE }} && \
+              -signing-config ${{ env.SIGNING_CONFIG }} \
+              -trusted-root ${{ env.TRUSTED_ROOT }} \
+              ${{ env.TEST_ARTIFACT }} > ${{ env.TEST_BUNDLE }} && \
             ~/go/bin/sigstore-go-verification \
               -tufTrustedRoot ${{ env.TRUSTED_ROOT }} \
               -expectedSAN ${{ env.IDENTITY }} \
