@@ -9,9 +9,9 @@ permissions: {}
 env:
   UPLOAD_ARTIFACT_NAME: trust-config-files
   TRUST_CONFIG_V01: ./trust_config.v0.1.json
-  SIGNING_CONFIG_V01: ./targets/signing_config.v0.1.json
+  SIGNING_CONFIG_V01: ./targets/signing_config.json
   SIGNING_CONFIG_V02: ./targets/signing_config.v0.2.json
-  TRUSTED_ROOT_V01: ./targets/trusted_root.v0.1.json
+  TRUSTED_ROOT_V01: ./targets/trusted_root.json
   IDENTITY: ${{ github.server_url }}/${{ github.workflow_ref }}
   ISSUER: https://token.actions.githubusercontent.com
   TEST_ARTIFACT: ./hello.txt
