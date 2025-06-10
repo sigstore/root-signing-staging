@@ -1,6 +1,7 @@
 name: Test with PR root
 
 on:
+  workflow_dispatch:
   pull_request:
 
 permissions: {}
