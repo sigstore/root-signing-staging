@@ -8,10 +8,10 @@ permissions: {}
 
 env:
   UPLOAD_ARTIFACT_NAME: trust-config-files
-  TRUST_CONFIG_V01: ./trust_config.json
-  SIGNING_CONFIG_V01: ./targets/signing_config.json
+  TRUST_CONFIG_V01: ./trust_config.v0.1.json
+  SIGNING_CONFIG_V01: ./targets/signing_config.v0.1.json
   SIGNING_CONFIG_V02: ./targets/signing_config.v0.2.json
-  TRUSTED_ROOT_V01: ./targets/trusted_root.json
+  TRUSTED_ROOT_V01: ./targets/trusted_root.v0.1.json
   IDENTITY: ${{ github.server_url }}/${{ github.workflow_ref }}
   ISSUER: https://token.actions.githubusercontent.com
   TEST_ARTIFACT: ./hello.txt
@@ -51,6 +51,8 @@ jobs:
         id-token: write # For signing with the GitHub workflow identity
         contents: read
       runs-on: ubuntu-latest
+      env:
+        SIGSTORE_PYTHON_TRUST_CONFIG: ./trust_config.json
       defaults:
         run:
           working-directory: ${{ env.UPLOAD_ARTIFACT_NAME }}
@@ -58,15 +60,19 @@ jobs:
         - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
           with:
             artifact-ids: ${{ needs.trust-config.outputs.trust-config-artifact-id }}
+        - name: build sigstore-python trust-config
+          # sigstore-python currently uses a non-standard "trust_config".
+          run: |
+            jq -n '{trustedRoot: input, signingConfig: input}' ${{ env.TRUSTED_ROOT_V01 }} ${{ env.SIGNING_CONFIG_V01 }} }' > ${{ env.SIGSTORE_PYTHON_TRUST_CONFIG }}
         - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         - run: pip install sigstore
         - name: sign
           run: |
             # sign, then verify using this workflows oidc identity
-            python -m sigstore --trust-config ${{ env.TRUST_CONFIG_V01 }} sign --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
+            python -m sigstore --trust-config ${{ env.SIGSTORE_PYTHON_TRUST_CONFIG }} sign --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
         - name: verify
           run: |
-            python -m sigstore --trust-config ${{ env.TRUST_CONFIG_V01 }} verify github --cert-identity ${{ env.IDENTITY }} --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
+            python -m sigstore --trust-config ${{ env.SIGSTORE_PYTHON_TRUST_CONFIG }} verify github --cert-identity ${{ env.IDENTITY }} --bundle artifact.sigstore.json ${{ env.TEST_ARTIFACT }} -v
 
     sigstore-go:
       needs: trust-config
