@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2035-08-09T18:05:42Z",
+  "expires": "2035-08-10T16:16:54Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -139,12 +139,12 @@
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "ed554c03e399314824ebfa7aa1dcc97dd399830dcc494fae186956cdaf080830"
+     "sha256": "d186ec66ca32275d48a54f0d741d08412ecfad3412561a77ebd1dadff6a3e8fe"
     },
     "length": 7287
    }
   },
-  "version": 19,
+  "version": 20,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
