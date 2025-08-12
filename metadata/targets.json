@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "3046022100d727d99f2ec16921b33bf733f6b3fdc8d35d8d0971152d69a324c8253ace49030221009b1567f3b9772cfed1c8a7b821dc38f4a6f4ab7b3cb520cc9fa0f6d92946670f"
+   "sig": ""
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2035-07-20T18:29:48Z",
+  "expires": "2035-08-10T16:49:32Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -133,18 +133,18 @@
    },
    "signing_config.v0.2.json": {
     "hashes": {
-     "sha256": "149b5d01e0cc43314508c2938dcfe6bad3148f0a5b0837944c33822be9143448"
+     "sha256": "c1e5ffb69679205969c7f731eb6d39ecd4ee2daeaccde216db61aa738a8fd347"
     },
-    "length": 1223
+    "length": 1463
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "ed6a9cf4e7c2e3297a4b5974fce0d17132f03c63512029d7aa3a402b43acab49"
+     "sha256": "d186ec66ca32275d48a54f0d741d08412ecfad3412561a77ebd1dadff6a3e8fe"
     },
-    "length": 6824
+    "length": 7287
    }
   },
-  "version": 18,
+  "version": 19,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
