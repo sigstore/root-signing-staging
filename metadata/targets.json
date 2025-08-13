@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "3045022100fd52f52eebc7630b520cd79ca43063db16515864f32b89c426340eb43aa0debb022075315715afc8b7bdb381f3f18b989af0708afbffdb0a496bae87b7f23457c60e"
+   "sig": "3045022100a6796e96e81abef3de353a8dddf5648fb8cff08f058ad6865eeb710d7db7b7060220717d47abc2e5dde4cf1f3542025a9c9456ff8c1bfe02e64ea3342b883510a9b4"
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": "304602210085a66eee9c2c35a24fd46a828b9fe5ee02cb8c0d502f4b4d22ef06fe1890faa00221008d2c6ab6ee832fa2ef2daca2e343e3f8bd0c7ad6181c6b296c03fe429a79587b"
+   "sig": "30440220495b9869f1129cfb5750f52792159a93b3d5d52922e2435de37fc4a115b44fa902201d128d0ea58e0150c379857dfe4ebc0e09e1d331e3c46d9a35f40d6871889564"
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2035-08-10T16:49:32Z",
+  "expires": "2035-08-11T11:21:36Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -139,12 +139,12 @@
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "d186ec66ca32275d48a54f0d741d08412ecfad3412561a77ebd1dadff6a3e8fe"
+     "sha256": "799b64de4ce7e28ad663d51d751c0f1260c37b17a76d44ea212a511be5afd38e"
     },
-    "length": 7287
+    "length": 7290
    }
   },
-  "version": 19,
+  "version": 20,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
