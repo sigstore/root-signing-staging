@@ -15,7 +15,7 @@ jobs:
       - name: Smoke test Sigstore staging repository with a TUF client
         uses: theupdateframework/tuf-on-ci/actions/test-repository@c9dd13e6f46ec03f7c81cd4e1afeb7d674be24fa # v0.17.0
         with:
-          metadata_url: https://tuf-repo-cdn.sigstage.dev/
+          metadata_url: https://tuf-repo-cdn.sigstage.dev
           # when workflow is reused in publish.yml, do not require future validity
           valid_days:  ${{ github.workflow == 'root-signing GCS repository tests' && 5 || 0 }}
           offline_valid_days: ${{ github.workflow == 'root-signing GCS repository tests' && 16 || 0 }}
@@ -25,7 +25,7 @@ jobs:
       id-token: 'write' # For signing with the GitHub workflow identity
     uses: ./.github/workflows/custom-test.yml
     with:
-      metadata_url: https://tuf-repo-cdn.sigstage.dev/
+      metadata_url: https://tuf-repo-cdn.sigstage.dev
 
   update-issue:
     runs-on: ubuntu-latest
