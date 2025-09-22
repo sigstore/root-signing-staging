@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "3045022100a6796e96e81abef3de353a8dddf5648fb8cff08f058ad6865eeb710d7db7b7060220717d47abc2e5dde4cf1f3542025a9c9456ff8c1bfe02e64ea3342b883510a9b4"
+   "sig": ""
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": "30440220495b9869f1129cfb5750f52792159a93b3d5d52922e2435de37fc4a115b44fa902201d128d0ea58e0150c379857dfe4ebc0e09e1d331e3c46d9a35f40d6871889564"
+   "sig": ""
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2035-08-11T11:21:36Z",
+  "expires": "2035-09-20T19:37:49Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -133,18 +133,18 @@
    },
    "signing_config.v0.2.json": {
     "hashes": {
-     "sha256": "c1e5ffb69679205969c7f731eb6d39ecd4ee2daeaccde216db61aa738a8fd347"
+     "sha256": "14452cddce0d882c7ee7124653ba03a6684afaca12be9e9561ee198cf46734ad"
     },
-    "length": 1463
+    "length": 1703
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "799b64de4ce7e28ad663d51d751c0f1260c37b17a76d44ea212a511be5afd38e"
+     "sha256": "6f36ef3cc00b087d3a5dd2e538f29982d45235801e14e9511b282fd51df8b8ec"
     },
-    "length": 7290
+    "length": 7756
    }
   },
-  "version": 20,
+  "version": 21,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
