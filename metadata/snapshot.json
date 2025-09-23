@@ -2,21 +2,21 @@
  "signatures": [
   {
    "keyid": "c3479007e861445ce5dc109d9661ed77b35bbc0e3f161852c46114266fc2daa4",
-   "sig": "30460221009bb2b16521bff3492c7c753cb77c4dbba75cb8201281a50ddf773c3763c8f7c4022100b3130e1fda606e9131082b1133358451e893f9d5721c799ffdf8f5f854fc0d93"
+   "sig": "304402207cd06a1d68feb73997ac780f2791fc59c6926421f87928dfde8203a17b9fb99f02207b132ab95f887f204e717acf3dab368c455f7e267399beb10a91e56545eb008a"
   }
  ],
  "signed": {
   "_type": "snapshot",
-  "expires": "2035-08-11T11:32:49Z",
+  "expires": "2035-09-21T15:29:31Z",
   "meta": {
    "registry.npmjs.org.json": {
     "version": 5
    },
    "targets.json": {
-    "version": 20
+    "version": 21
    }
   },
   "spec_version": "1.0",
-  "version": 19
+  "version": 20
  }
 }
