@@ -40,11 +40,15 @@ jobs:
           python -m sigstore --instance ${STAGING_URL} \
               verify github --cert-identity $IDENTITY --bundle artifact.sigstore.json artifact
 
+          # sign again with rekor v1 for sigstore-js
+          python -m sigstore -vv --instance ${STAGING_URL} \
+              sign --rekor-version=1 --bundle artifact-rekor1.sigstore.json artifact
+
       - name: Upload the bundle for other clients to verify
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: bundle
-          path: artifact.sigstore.json
+          path: artifact*.sigstore.json
           overwrite: true
 
   cosign:
@@ -165,7 +169,7 @@ jobs:
               --certificate-identity-uri $IDENTITY \
               --certificate-issuer https://token.actions.githubusercontent.com \
               --blob-file=artifact \
-              artifact.sigstore.json
+              artifact-rekor1.sigstore.json
 
   sigstore-java:
     runs-on: ubuntu-latest
