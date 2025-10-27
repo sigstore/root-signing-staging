@@ -69,13 +69,11 @@ jobs:
           # sign, then verify using this workflows oidc identity
           cosign sign-blob \
               --yes \
-              --fulcio-url https://fulcio.sigstage.dev \
-              --oidc-issuer https://oauth2.sigstage.dev/auth \
-              --rekor-url https://rekor.sigstage.dev \
               --bundle bundle.json \
               artifact
 
           cosign verify-blob \
+              --use-signed-timestamps=true \
               --certificate-identity $IDENTITY \
               --certificate-oidc-issuer https://token.actions.githubusercontent.com \
               --bundle bundle.json \
