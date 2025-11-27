@@ -225,10 +225,10 @@ jobs:
 
       - name: Download and configure initial root
         run: |
-          curl -o root.json ${METADATA_URL}/1.root.json
+          curl -o root.json ${STAGING_URL}/1.root.json
           METADATA_DIR=$(mktemp -d -t root-signing-ruby-test.XXXXXX)
           sigstore-cli tuf init root.json --metadata-dir=${METADATA_DIR}
-          sigstore-cli tuf refresh --metadata-dir=${METADATA_DIR} --metadata-url=${METADATA_URL}
+          sigstore-cli tuf refresh --metadata-dir=${METADATA_DIR} --metadata-url=${STAGING_URL}
 
       - name: Download bundle to verify
         uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
