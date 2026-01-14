@@ -120,7 +120,8 @@
         "rawBytes": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8gEDKNme8AnXuPBgHjrtXdS6miHqc24CRblNEOFpiJRngeq8Ko73Y+K18yRYVf1DXD4AVLwvKyzdNdl5n0jUSQ==",
         "keyDetails": "PKIX_ECDSA_P256_SHA_256",
         "validFor": {
-          "start": "2022-07-01T00:00:00Z"
+          "start": "2022-07-01T00:00:00Z",
+          "end": "2026-01-21T00:00:00Z"
         }
       },
       "logId": {
@@ -134,7 +135,7 @@
         "rawBytes": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEv8+Fp+klTMlOd0FU+eekotPzlaF9orvv9ZgdLXq5+MmoGThLNigXIapXjW0lujsU6+ZHKZ6UPzSuz+V8YxLoQw==",
         "keyDetails": "PKIX_ECDSA_P256_SHA_256",
         "validFor": {
-          "start": "2026-01-13T00:00:00Z"
+          "start": "2026-01-14T00:00:00Z"
         }
       },
       "logId": {
