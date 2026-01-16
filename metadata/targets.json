@@ -86,19 +86,6 @@
     },
     "length": 178
    },
-   "ctfe_2026_1.pub": {
-    "custom": {
-     "sigstore": {
-      "status": "Active",
-      "uri": "https://log2026-1.ctfe.sigstage.dev",
-      "usage": "CTFE"
-     }
-    },
-    "hashes": {
-     "sha256": "ced129f08e198eed3b29d7f87644cf754dbd7dea6b0d0db7f6af712e426a3321"
-    },
-    "length": 178
-   },
    "fulcio.crt.pem": {
     "custom": {
      "sigstore": {
