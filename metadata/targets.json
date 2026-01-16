@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "3046022100fdf1a8429ff8816a4f2046c494233435e43ee09c4fcd7d9c8cd6b1792b37280b022100bdb00d25f3bc4463f764dc3d9da1ead54adb463e6e19e52ea5468a04c241fadb"
+   "sig": "30450220118ba68434f6a37254989aaaf5da0c54e936b12cb99efdc974fbabb4d50644fc022100eff6b30fd91d4aacee09cb9584e3fe0cdb5574d8c92273aebbc675bdb4f11a5a"
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": ""
+   "sig": "3045022071e3e3c8b933053879dccca7083f0b9eb6cc3148e8ba8bd95966def6d2015d29022100a1451265a6c39f48fe3539876ac8229e2c51ce7d3dc3a55c04079ad6df4a8208"
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2036-01-12T18:24:19Z",
+  "expires": "2036-01-12T23:23:45Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -152,12 +152,12 @@
    },
    "trusted_root.json": {
     "hashes": {
-     "sha256": "3c79f02bd1a5838f72b7812c168378faa13a89514d398baf5a7b04fec1429997"
+     "sha256": "81f5af777952d2c3955062ad56924c05ca916b5d49f3a0bce945faa475a8b1cc"
     },
-    "length": 8290
+    "length": 8249
    }
   },
-  "version": 23,
+  "version": 24,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
