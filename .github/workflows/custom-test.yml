@@ -84,12 +84,12 @@ jobs:
     steps:
       - uses: sigstore/cosign-installer@ba7bc0a3fef59531c69a25acd34668d6d3fe6f22 # v4.1.0
         with:
-          cosign-release: "v2.2.0"
+          cosign-release: "v2.6.0"
 
       - name: Download initial root
         run: curl -o root.json ${STAGING_URL}/1.root.json
 
-      - name: Test published repository with cosign 2.2
+      - name: Test published repository with older cosign
         run: |
           touch artifact
 
