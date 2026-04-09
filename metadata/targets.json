@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "aa61e09f6af7662ac686cf0c6364079f63d3e7a86836684eeced93eace3acd81",
-   "sig": "30450220118ba68434f6a37254989aaaf5da0c54e936b12cb99efdc974fbabb4d50644fc022100eff6b30fd91d4aacee09cb9584e3fe0cdb5574d8c92273aebbc675bdb4f11a5a"
+   "sig": "3046022100877141ae6c393fdf344c7ee943405be585430288a9b890852ba2aef3826399e8022100891cac923b0bdf05e84a31d8248bc6e63b68dcae7a58d63d5fcbf2376f0f7808"
   },
   {
    "keyid": "61f9609d2655b346fcebccd66b509d5828168d5e447110e261f0bcc8553624bc",
-   "sig": "3045022071e3e3c8b933053879dccca7083f0b9eb6cc3148e8ba8bd95966def6d2015d29022100a1451265a6c39f48fe3539876ac8229e2c51ce7d3dc3a55c04079ad6df4a8208"
+   "sig": "30450220401df47745c520bb92e8f017f46b8195ee668d90fc7e83cb81db4ab615a57860022100957ef7526299d6735bdd702693a2a6f27b6456a11f17f70da8dd9b833f45c89e"
   },
   {
    "keyid": "9471fbda95411d10109e467ad526082d15f14a38de54ea2ada9687ab39d8e237",
@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2036-01-12T23:23:45Z",
+  "expires": "2036-01-14T12:35:58Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -83,6 +83,19 @@
     },
     "hashes": {
      "sha256": "7054b4f15f969daca1c242bb9e77527abaf0b9acf9818a2a35144e4b32b20dc6"
+    },
+    "length": 178
+   },
+   "ctfe_2026_1.pub": {
+    "custom": {
+     "sigstore": {
+      "status": "Active",
+      "uri": "https://log2026-1.ctfe.sigstage.dev",
+      "usage": "CTFE"
+     }
+    },
+    "hashes": {
+     "sha256": "ced129f08e198eed3b29d7f87644cf754dbd7dea6b0d0db7f6af712e426a3321"
     },
     "length": 178
    },
@@ -144,7 +157,7 @@
     "length": 8249
    }
   },
-  "version": 24,
+  "version": 25,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
