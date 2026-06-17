@@ -44,7 +44,7 @@
     }
    ]
   },
-  "expires": "2036-06-14T12:53:20Z",
+  "expires": "2036-06-14T12:54:45Z",
   "spec_version": "1.0",
   "targets": {
    "ctfe.pub": {
@@ -146,9 +146,9 @@
    },
    "signing_config.v0.2.json": {
     "hashes": {
-     "sha256": "14452cddce0d882c7ee7124653ba03a6684afaca12be9e9561ee198cf46734ad"
+     "sha256": "7cd0090164c5c85e46d78ac44a28cca2e423967aa184c4d43c2108683ca26f62"
     },
-    "length": 1703
+    "length": 1215
    },
    "trusted_root.json": {
     "hashes": {
@@ -157,7 +157,7 @@
     "length": 12722
    }
   },
-  "version": 26,
+  "version": 27,
   "x-tuf-on-ci-expiry-period": 3650,
   "x-tuf-on-ci-signing-period": 365
  }
