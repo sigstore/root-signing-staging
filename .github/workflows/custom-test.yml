@@ -83,21 +83,18 @@ jobs:
               artifact
 
   cosign-old-version:
-    # https://github.com/sigstore/root-signing-staging/issues/431:
-    # cosign-old-version fails with multi-region infra: set continue-on-error
-    continue-on-error: true
     permissions:
       id-token: 'write' # For signing with the GitHub workflow identity
     runs-on: ubuntu-latest
     steps:
       - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
         with:
-          cosign-release: "v2.2.0"
+          cosign-release: "v2.5.1"
 
       - name: Download initial root
         run: curl -o root.json ${STAGING_URL}/1.root.json
 
-      - name: Test published repository with cosign 2.2
+      - name: Test published repository with cosign 2.5
         run: |
           touch artifact
 
