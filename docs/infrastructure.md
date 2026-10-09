@@ -11,13 +11,12 @@ Online signing for snapshot and timestamp roles uses Google Cloud KMS.
 * KMS management happens in the public-good-instance repository using the tuf module from
   [sigstore/scaffolding](https://github.com/sigstore/scaffolding)
 
-### Bot account and custom token
+### GitHub App authentication
 
-Several workflows in this repository require elevated permissions. This is achieved using a custom token:
-* Custom token is stored in repository secret `TUF_ON_CI_TOKEN`.
-* Required token permissions are documented in tuf-on-ci
-  [maintenance manual](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/REPOSITORY-MAINTENANCE.md#custom-github-token)
-* token was created in the bot account @sigstore-bot and needs to be re-created once a year
+Several workflows in this repository require elevated permissions. This is achieved using a GitHub App:
+* The App ID is stored in repository variable `TUF_ON_CI_APP_ID` and the private key in repository secret `TUF_ON_CI_APP_PRIVATE_KEY`.
+* Required App setup and permissions are documented in tuf-on-ci
+  [GitHub App setup documentation](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/GITHUB-APP-SETUP.md).
 
 ### Repository publishing
 
