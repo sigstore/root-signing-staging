@@ -32,7 +32,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Check workflow files
-        uses: reviewdog/action-actionlint@v1.80.8
+        uses: reviewdog/action-actionlint@v1.84.1
         with:
           actionlint_flags: -color
 
