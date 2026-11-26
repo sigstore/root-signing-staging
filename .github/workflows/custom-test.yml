@@ -57,7 +57,7 @@ jobs:
       id-token: 'write' # For signing with the GitHub workflow identity
     runs-on: ubuntu-latest
     steps:
-      - uses: sigstore/cosign-installer@v4.1.3
+      - uses: sigstore/cosign-installer@v4.1.4
 
       - name: Download initial root
         run: curl -o root.json ${STAGING_URL}/1.root.json
@@ -87,7 +87,7 @@ jobs:
       id-token: 'write' # For signing with the GitHub workflow identity
     runs-on: ubuntu-latest
     steps:
-      - uses: sigstore/cosign-installer@v4.1.3
+      - uses: sigstore/cosign-installer@v4.1.4
         with:
           cosign-release: "v2.5.1"
 
@@ -120,7 +120,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [sigstore-python]
     steps:
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version: 'stable'
 
